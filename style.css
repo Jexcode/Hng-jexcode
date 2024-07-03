@@ -1,0 +1,199 @@
+/* variables */
+:root{
+  --text: hsl(231, 37%, 7%);
+  --background: hsl(231, 47%, 97%);
+  --primary: hsl(228, 79%, 48%);
+  --secondary: hsl(228, 49%, 73%);
+  --secondary2: hsl(228, 49%, 22%);
+  --accent: hsl(228, 54%, 63%);
+  --font: sans-serif;
+
+}
+
+/* Css Reset */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+body {
+  /* background: var(--background); */
+  background: rgb(197, 216, 255);
+  background: radial-gradient(circle, rgba(197, 216, 255, 1) 0%, rgba(247, 247, 247, 1) 100%);
+  color: var(--text);
+  font-family: var(--font);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+img, picture, video, canvas, svg {
+  display: block;
+}
+
+input, button, textarea, select {
+  font: inherit;
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+
+#root, #__next {
+  isolation: isolate;
+}
+
+/* wrapper */
+
+.center{
+  align-items: center;
+  justify-content: center;
+}
+
+.con{
+  padding: 1rem;
+}
+
+.con > h1{
+  text-align: center;
+}
+
+.wrapper{
+  display: grid;
+  gap: 1rem;
+  padding: 1rem 0;
+  width: 100%;
+}
+
+.wrapper > h1{
+  margin: 0 auto .5rem;
+}
+
+.wrapper > [data-testid="profile"]{
+  border: 1px solid var(--secondary2);
+  border-radius: .5rem;
+  background: var(--secondary);
+  padding: 0.5rem;
+}
+
+
+.wrapper > [data-testid="profile"] .details {
+  display: grid;
+  gap: 0.5rem;
+  justify-content: start;
+  position: relative;
+  width: 100%;
+}
+
+.wrapper > [data-testid="profile"] .details p {
+  font-size: 1.05rem;
+  font-weight: 500;
+}
+
+.wrapper > [data-testid="profile"] > .details p > span{
+  font-weight: 400;
+}
+
+.wrapper > [data-testid="profile"] > .details .profileText{
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+}
+
+.wrapper > [data-testid="profile"] [data-testid="slackProfilePicture"] {
+  aspect-ratio: 1;
+}
+
+.wrapper > [data-testid="profile"] > .details .profileImg{
+  justify-self: center;
+}
+
+.wrapper > [data-testid="profile"] > .details .profileImg figcaption{
+  background: hsla(235, 0%, 0%, 0.3);
+  color: var(--background);
+  font-size: .8rem;
+  text-align: center;
+}
+
+/* years */
+
+.wrapper .year-one,
+.wrapper .year-two{
+  width: 100%;
+}
+
+/* goals */
+.wrapper .year-one > .goals,
+.wrapper .year-two > .goals
+{
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  width: 100%;
+}
+
+.wrapper .year-one > .goals > div,
+.wrapper .year-two > .goals > div
+{
+  background: var(--accent);
+  border-radius: .5rem;
+  padding: 1rem;
+  position: relative;
+  transition: all .75s ease-in-out;
+  width: 100%;
+}
+
+.wrapper .year-one>.goals>div:after,
+.wrapper .year-two>.goals>div:after{
+  background: var(--text);
+  border-radius: .5rem;
+  content: '';
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: .5rem;
+  left: .6rem;
+  z-index: -1;
+}
+
+.wrapper .year-one>.goals>div:hover,
+.wrapper .year-two>.goals>div:hover {
+  background: var(--secondary2);
+  color: var(--secondary);
+}
+
+.wrapper .year-one > .goals div > ul, 
+.wrapper .year-two > .goals div > ul {
+  padding-left: 1rem;
+}
+
+/* footer */
+.con .footer{
+  border-top: 1px solid var(--accent);
+  display: flex;
+  margin-block: 1rem .5rem;
+  justify-content: space-between;
+  padding: .5rem;
+  max-width: 500px;
+  margin-inline: auto;
+}
+
+.con .footer .btn{
+  color: var(--primary);
+  padding: .5rem 1rem;
+}
+
+/* desktop & Tablets */
+@media screen and (min-width: 576px) {
+  .wrapper .year-one>.goals,
+  .wrapper .year-two>.goals{
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+.wrapper > [data-testid="profile"] .details {
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+}
+
+}
