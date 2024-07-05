@@ -71,7 +71,7 @@ p, h1, h2, h3, h4, h5, h6 {
   margin: 0 auto .5rem;
 }
 
-.wrapper > [data-testid="profile"]{
+.wrapper > .profile{
   border: 1px solid var(--secondary2);
   border-radius: .5rem;
   background: var(--secondary);
@@ -79,7 +79,7 @@ p, h1, h2, h3, h4, h5, h6 {
 }
 
 
-.wrapper > [data-testid="profile"] .details {
+.wrapper > .profile .details {
   display: grid;
   gap: 0.5rem;
   justify-content: start;
@@ -87,30 +87,30 @@ p, h1, h2, h3, h4, h5, h6 {
   width: 100%;
 }
 
-.wrapper > [data-testid="profile"] .details p {
+.wrapper > .profile .details p {
   font-size: 1.05rem;
   font-weight: 500;
 }
 
-.wrapper > [data-testid="profile"] > .details p > span{
+.wrapper > .profile > .details p > span{
   font-weight: 400;
 }
 
-.wrapper > [data-testid="profile"] > .details .profileText{
+.wrapper > .profile > .details .profileText{
   display: flex;
   flex-direction: column;
   gap: .5rem;
 }
 
-.wrapper > [data-testid="profile"] [data-testid="slackProfilePicture"] {
+.wrapper > .profile [data-testid="slackProfilePicture"] {
   aspect-ratio: 1;
 }
 
-.wrapper > [data-testid="profile"] > .details .profileImg{
+.wrapper > .profile > .details .profileImg{
   justify-self: center;
 }
 
-.wrapper > [data-testid="profile"] > .details .profileImg figcaption{
+.wrapper > .profile > .details .profileImg figcaption{
   background: hsla(235, 0%, 0%, 0.3);
   color: var(--background);
   font-size: .8rem;
@@ -192,7 +192,7 @@ p, h1, h2, h3, h4, h5, h6 {
     grid-template-columns: repeat(2, 1fr);
   }
   
-.wrapper > [data-testid="profile"] .details {
+.wrapper > .profile .details {
   grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
 }
 
